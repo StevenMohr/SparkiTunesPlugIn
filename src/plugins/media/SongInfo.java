@@ -23,12 +23,12 @@ public class SongInfo {
 
 	public SongInfo() {}
 
-	public String getInterpret() {
+	public String getArtist() {
 		return artist;
 	}
 
-	public void setInterpret(String interpret) {
-		this.artist = interpret;
+	public void setArtist(String artist) {
+		this.artist = artist;
 	}
 
 	public String getTitle() {

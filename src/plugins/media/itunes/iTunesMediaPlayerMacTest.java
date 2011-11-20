@@ -24,7 +24,7 @@ public class iTunesMediaPlayerMacTest {
 			Thread.sleep(2000);
 			MediaPlayer mp = new ITunesMediaPlayerMac();
 			SongInfo songInfo = mp.getCurrentPlayingSong();
-			assertNotNull(songInfo.getInterpret());
+			assertNotNull(songInfo.getArtist());
 			assertNotNull(songInfo.getTitle());
 		} catch (Exception e) {
 			e.printStackTrace();

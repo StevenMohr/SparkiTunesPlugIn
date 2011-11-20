@@ -11,9 +11,9 @@ import java.io.InputStreamReader;
 import plugins.media.MediaPlayer;
 import plugins.media.SongInfo;
 
+
 /**
  * @author Steven Mohr
- * 
  */
 public class ITunesMediaPlayerMac implements MediaPlayer {
 
@@ -22,21 +22,20 @@ public class ITunesMediaPlayerMac implements MediaPlayer {
 		Runtime rt = Runtime.getRuntime();
 		SongInfo songInfo = new SongInfo();
 		try {
-			String[] args = { "osascript", "-e",
-			"tell app \"iTunes\" to artist of current track as string" };
+			String[] args = { "osascript", "-e", "tell app \"iTunes\" to artist of current track as string" };
 			Process proc = rt.exec(args);
 			InputStream in = proc.getInputStream();
 			String artist = new BufferedReader(new InputStreamReader(in)).readLine();
-			
-			String[] args2 = { "osascript", "-e",
-			"tell app \"iTunes\" to name of current track as string" };
+
+			String[] args2 = { "osascript", "-e", "tell app \"iTunes\" to name of current track as string" };
 			proc = rt.exec(args2);
 			in = proc.getInputStream();
 			String title = new BufferedReader(new InputStreamReader(in)).readLine();
-			
-			songInfo.setInterpret(artist);
+
+			songInfo.setArtist(artist);
 			songInfo.setTitle(title);
-		} catch (IOException e) {
+		}
+		catch (IOException e) {
 			return null;
 		}
 		return songInfo;
