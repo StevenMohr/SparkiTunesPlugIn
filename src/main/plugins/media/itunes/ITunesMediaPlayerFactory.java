@@ -20,7 +20,6 @@ public class ITunesMediaPlayerFactory {
 	 */
 	public static MediaPlayer getITunesMediaPlayer(){
 		final String osName = System.getProperty("os.name");
-		System.out.println(osName);
 		if(osName.equals("windows")) {
 			return new ITunesMediaPlayerWin();
 		} else if (osName.toLowerCase().equals("mac os x")){

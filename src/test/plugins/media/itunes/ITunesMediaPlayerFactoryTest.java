@@ -21,9 +21,12 @@ public class ITunesMediaPlayerFactoryTest {
 		assertNotNull(mp);
 		if (System.getProperty("os.name").toLowerCase().equals("windows")) {
 			assertTrue(mp instanceof ITunesMediaPlayerWin);
-		} else if (System.getProperty("os.name").toLowerCase().equals("mac")) {
+		} else if (System.getProperty("os.name").toLowerCase().equals("mac os x")) {
 			assertTrue(mp instanceof ITunesMediaPlayerMac);
+		} else {
+			fail();
 		}
+		
 	}
 
 }
